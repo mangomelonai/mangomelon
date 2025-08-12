@@ -6,49 +6,168 @@
   <title>Mangomelon AI LLC</title>
   <meta name="description" content="Mangomelon AI LLC uses AI to make data analysis much easier with products and services for researchers and teams." />
   <link rel="canonical" href="https://mangomelon.ai/" />
-  <!-- favicon / social -->
   <link rel="icon" href="logo.jpeg" />
   <meta property="og:title" content="Mangomelon AI LLC" />
   <meta property="og:description" content="AI-powered products and services that simplify data analysis." />
   <meta property="og:image" content="https://mangomelon.ai/logo.png" />
-  <meta name="theme-color" content="#0f1115" />
+  <meta name="theme-color" content="#1e222c" />
   <style>
-    :root{--bg:#0f1115;--panel:#151922;--line:#232838;--txt:#e6e8eb;--mut:#aeb4bd}
-    *{box-sizing:border-box}  body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.6 system-ui,Segoe UI,Roboto,Arial}
-    .wrap{max-width:960px;margin:8vh auto;padding:24px}
-    .hero{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
-    .logoBox{width:88px;height:88px;border-radius:18px;background:#0b0d12;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;overflow:hidden}
-    .logoBox img{width:100%;height:100%;object-fit:contain}
-    h1{margin:0;font-size:32px;line-height:1.25;letter-spacing:.2px}
-    .tag{margin:.25rem 0 1.5rem;color:var(--mut)}
-    .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px}
-    .h2{margin:0 0 .6rem;font-size:20px;font-weight:700}
-    .btn{display:inline-block;margin-top:14px;padding:12px 16px;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:inherit}
-    footer{opacity:.75;margin-top:22px}
-    @media (max-width:520px){h1{font-size:26px}.logoBox{width:76px;height:76px}}
+    :root {
+      --bg: #1e222c;
+      --panel: #282d38;
+      --line: #4a505f;
+      --txt: #f0f2f5;
+      --mut: #aeb4bd;
+      --primary: #4a89f3;
+      --primary-hover: #3a75e3;
+    }
+
+    /* Global styles */
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--txt);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    /* Layout */
+    .wrap {
+      max-width: 960px;
+      margin: 8vh auto;
+      padding: 24px;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .logoBox {
+      width: 200px; /* Increased width to accommodate a wider logo */
+      height: auto; /* Allow height to adjust dynamically */
+      border-radius: 20px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      padding: 10px 15px; /* Adjust padding for wide logos */
+    }
+    .logoBox img {
+      max-width: 100%;
+      height: auto; /* Ensures the image scales proportionally */
+      object-fit: contain;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 38px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+
+    .tag {
+      margin-top: 4px;
+      color: var(--mut);
+      font-size: 18px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .h2 {
+      margin: 0 0 12px;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 24px;
+      background-color: var(--primary);
+      border-radius: 12px;
+      color: var(--txt);
+      font-weight: 600;
+      text-align: center;
+      transition: background-color 0.2s ease-in-out;
+    }
+    .btn:hover {
+      background-color: var(--primary-hover);
+    }
+
+    footer {
+      opacity: 0.6;
+      margin-top: 40px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 520px) {
+      .wrap {
+        padding: 16px;
+      }
+      .hero {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+      h1 {
+        font-size: 32px;
+      }
+      .logoBox {
+        width: 100%; /* Make logo full width on small screens */
+        height: auto;
+      }
+      .card {
+        padding: 24px;
+      }
+      .btn {
+        display: block;
+        width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
   <main class="wrap">
     <header class="hero">
       <div class="logoBox">
-        <!-- Replace /assets/logo.png with your actual path -->
         <img src="logo.png" alt="Mangomelon AI logo">
       </div>
       <div>
         <h1>Mangomelon AI LLC</h1>
-        <div class="tag">Data & AI support.</div>
+        <div class="tag">AI-powered solutions for data analysis.</div>
       </div>
     </header>
 
     <section class="card">
       <div class="h2">What we do</div>
-      <p>Mangomelon AI LLC is a new company looking to use AI to make data analysis much easier. We are working on products and services to support the data analysis space.</p>
-      <a class="btn" href="mailto:mangomelonai@gmail.com">Contact: mangomelonai@gmail.com</a>
+      <p>Mangomelon AI LLC is a new company focused on developing **AI-powered products and services** to make data analysis and research more efficient for individuals and teams.</p>
+      <a class="btn" href="mailto:mangomelonai@gmail.com" aria-label="Contact Mangomelon AI via email">Get in Touch</a>
     </section>
 
     <footer>© <span id="y"></span> Mangomelon AI LLC</footer>
   </main>
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
