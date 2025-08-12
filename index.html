@@ -3,48 +3,52 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mangomelon AI</title>
-  <meta name="description" content="Mangomelon AI LLC uses AI to make data analysis easier with products and services for researchers and teams." />
+  <title>Mangomelon AI LLC</title>
+  <meta name="description" content="Mangomelon AI LLC uses AI to make data analysis much easier with products and services for researchers and teams." />
   <link rel="canonical" href="https://mangomelon.ai/" />
+  <!-- favicon / social -->
+  <link rel="icon" href="/assets/logo.png" />
+  <meta property="og:title" content="Mangomelon AI LLC" />
+  <meta property="og:description" content="AI-powered products and services that simplify data analysis." />
+  <meta property="og:image" content="https://mangomelon.ai/assets/logo.png" />
+  <meta name="theme-color" content="#0f1115" />
   <style>
-    :root{--bg:#0f1115;--panel:#151922;--line:#232838;--txt:#e6e8eb}
-    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.6 system-ui,Segoe UI,Roboto,Arial}
-    .wrap{max-width:920px;margin:8vh auto;padding:24px}
+    :root{--bg:#0f1115;--panel:#151922;--line:#232838;--txt:#e6e8eb;--mut:#aeb4bd}
+    *{box-sizing:border-box}  body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.6 system-ui,Segoe UI,Roboto,Arial}
+    .wrap{max-width:960px;margin:8vh auto;padding:24px}
+    .hero{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+    .logoBox{width:88px;height:88px;border-radius:18px;background:#0b0d12;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .logoBox img{width:100%;height:100%;object-fit:contain}
+    h1{margin:0;font-size:32px;line-height:1.25;letter-spacing:.2px}
+    .tag{margin:.25rem 0 1.5rem;color:var(--mut)}
     .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px}
-    .row{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
-    .logo{width:88px;height:88px;flex:0 0 auto;border-radius:18px;background:#0b0d12;border:1px solid var(--line);display:flex;align-items:center;justify-content:center}
-    .logo img{max-width:76px;max-height:76px;display:block}
-    h1{margin:0 0 .25rem;font-size:28px;font-weight:800;letter-spacing:.2px}
-    p{margin:.4rem 0 0}
-    .btn{display:inline-block;margin-top:14px;padding:12px 16px;border:1px solid var(--line);border-radius:10px;text-decoration:none;color:inherit}
-    footer{opacity:.7;margin-top:22px}
+    .h2{margin:0 0 .6rem;font-size:20px;font-weight:700}
+    .btn{display:inline-block;margin-top:14px;padding:12px 16px;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:inherit}
+    footer{opacity:.75;margin-top:22px}
+    @media (max-width:520px){h1{font-size:26px}.logoBox{width:76px;height:76px}}
   </style>
 </head>
 <body>
   <main class="wrap">
-    <div class="row">
-      <!-- Logo -->
-      <div class="logo">
-        <!-- Replace assets/logo.png with your file (e.g., /logo.png) -->
-        <img src="logo.jpeg" alt="Mangomelon AI logo" width="76" height="76" />
+    <header class="hero">
+      <div class="logoBox">
+        <!-- Replace /assets/logo.png with your actual path -->
+        <img src="logo.png" alt="Mangomelon AI logo">
       </div>
-
-      <!-- Title & tagline -->
       <div>
         <h1>🥭🍈 Mangomelon AI LLC</h1>
-        <p>Data & AI support for medical and scientific research.</p>
+        <div class="tag">Data & AI support for medical and scientific research.</div>
       </div>
-    </div>
+    </header>
 
-    <section class="card" style="margin-top:18px">
-      <h2 style="margin:0 0 .6rem;font-size:20px">What we do</h2>
+    <section class="card">
+      <div class="h2">What we do</div>
       <p>Mangomelon AI LLC is a new company looking to use AI to make data analysis much easier. We are working on products and services to support the data analysis space.</p>
       <a class="btn" href="mailto:mangomelonai@gmail.com">Contact: mangomelonai@gmail.com</a>
     </section>
 
     <footer>© <span id="y"></span> Mangomelon AI LLC • mangomelon.ai</footer>
   </main>
-
   <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
