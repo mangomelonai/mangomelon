@@ -3,14 +3,25 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mangomelon AI LLC</title>
-  <meta name="description" content="Mangomelon AI LLC uses AI to make data analysis much easier with products and services for researchers and teams." />
+  <title>Mangomelon AI LLC - AI-Powered Data Analysis Solutions</title>
+  <meta name="description" content="Mangomelon AI LLC uses cutting-edge AI to make data analysis effortless. Professional tools and services for researchers, analysts, and teams." />
+  <meta name="keywords" content="AI, data analysis, research automation, machine learning, data science, business intelligence" />
+  <meta name="author" content="Mangomelon AI LLC" />
   <link rel="canonical" href="https://mangomelon.ai/" />
   <link rel="icon" href="logo.jpeg" />
-  <meta property="og:title" content="Mangomelon AI LLC" />
-  <meta property="og:description" content="AI-powered products and services that simplify data analysis." />
+  <meta property="og:title" content="Mangomelon AI LLC - AI-Powered Data Analysis Solutions" />
+  <meta property="og:description" content="Transform your data analysis with AI-powered tools and services. Professional solutions for researchers and teams." />
   <meta property="og:image" content="https://mangomelon.ai/logo.jpeg" />
+  <meta property="og:url" content="https://mangomelon.ai/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mangomelon AI LLC" />
+  <meta name="twitter:description" content="AI-powered data analysis solutions for researchers and teams" />
+  <meta name="twitter:image" content="https://mangomelon.ai/logo.jpeg" />
   <meta name="theme-color" content="#1e222c" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #0f172a;
@@ -23,6 +34,9 @@
       --primary: #3b82f6;
       --primary-hover: #2563eb;
       --accent: #06b6d4;
+      --success: #10b981;
+      --error: #ef4444;
+      --warning: #f59e0b;
     }
 
     /* Global styles */
@@ -32,21 +46,331 @@
       background: var(--bg-gradient);
       background-attachment: fixed;
       color: var(--txt);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       font-size: 16px;
       line-height: 1.6;
       min-height: 100vh;
+      scroll-behavior: smooth;
     }
     a {
       color: var(--primary);
       text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: var(--primary-hover);
+    }
+
+    /* Enhanced Visual Elements */
+    
+    /* Enhanced Hover Effects */
+    .service-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--panel-border);
+      border-radius: 16px;
+      padding: 24px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+      transition: left 0.6s ease;
+    }
+    
+    .service-card:hover::before {
+      left: 100%;
+    }
+    
+    .service-card:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: var(--accent);
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+    
+    .service-card:hover .service-icon {
+      transform: scale(1.2) rotate(5deg);
+    }
+    
+    .service-icon {
+      font-size: 32px;
+      margin-bottom: 16px;
+      display: block;
+      transition: all 0.3s ease;
+    }
+    
+    /* Enhanced Card Animations */
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--panel-border);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 32px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .card.animate-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, transparent 0%, rgba(59, 130, 246, 0.05) 50%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .card:hover::after {
+      opacity: 1;
+    }
+    
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+    }
+    
+    /* Enhanced Button Animations */
+    .btn {
+      display: inline-block;
+      padding: 16px 32px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+      border: none;
+      border-radius: 16px;
+      color: var(--txt);
+      font-weight: 600;
+      font-size: 16px;
+      text-align: center;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+    }
+    
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.6s ease;
+    }
+    
+    .btn:hover::before {
+      left: 100%;
+    }
+    
+    .btn:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 12px 32px rgba(59, 130, 246, 0.4);
+    }
+    
+    .btn:active {
+      transform: translateY(-1px) scale(1.02);
+    }
+    
+    /* Enhanced Logo Animation */
+    .logoBox {
+      width: 320px;
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 15px 20px;
+      animation: logoFloat 6s ease-in-out infinite;
+      position: relative;
+    }
+    
+    .logoBox::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+      transform: translate(-50%, -50%);
+      animation: pulse 4s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
+      50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.1); }
+    }
+    
+    /* Enhanced Highlight Items */
+    .highlight-item {
+      text-align: center;
+      padding: 24px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 16px;
+      border: 1px solid var(--panel-border);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .highlight-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.6s ease;
+    }
+    
+    .highlight-item:hover::before {
+      transform: translateX(0);
+    }
+    
+    .highlight-item:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: var(--accent);
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+    }
+    
+    .highlight-item:hover .highlight-icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+    
+    .highlight-icon {
+      font-size: 32px;
+      margin-bottom: 16px;
+      display: block;
+      transition: all 0.3s ease;
+    }
+    
+    /* Loading Animation for Cards */
+    .card.loading {
+      position: relative;
+    }
+    
+    .card.loading::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      animation: shimmer 1.5s infinite;
+    }
+    
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    
+    /* Enhanced Navigation */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--panel-border);
+      z-index: 1000;
+      padding: 16px 0;
+      transition: all 0.3s ease;
+    }
+    
+    .nav.scrolled {
+      background: rgba(15, 23, 42, 0.95);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    
+    .nav-links a {
+      color: var(--mut);
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+    
+    .nav-links a:hover {
+      color: var(--txt);
+    }
+    
+    .nav-content {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .nav-logo {
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--txt);
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--txt);
+      font-size: 24px;
+      cursor: pointer;
     }
 
     /* Layout */
     .wrap {
       max-width: 960px;
-      margin: 8vh auto;
-      padding: 24px;
+      margin: 0 auto;
+      padding: 120px 24px 24px;
     }
 
     .hero {
@@ -54,15 +378,15 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      gap: 24px;
-      margin-bottom: 40px;
-      animation: fadeInUp 0.8s ease-out;
+      gap: 32px;
+      margin-bottom: 60px;
+      animation: fadeInUp 1s ease-out;
     }
 
     @keyframes fadeInUp {
       from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(40px);
       }
       to {
         opacity: 1;
@@ -70,125 +394,115 @@
       }
     }
 
-    .logoBox {
-      width: 300px; /* Increased width to make logo bigger */
-      height: auto; /* Allow height to adjust dynamically */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      padding: 10px 15px; /* Adjust padding for wide logos */
-    }
     .logoBox img {
       max-width: 100%;
-      height: auto; /* Ensures the image scales proportionally */
+      height: auto;
       object-fit: contain;
+      filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
     }
 
     h1 {
       margin: 0;
-      font-size: 38px;
+      font-size: 42px;
       font-weight: 700;
       line-height: 1.2;
       letter-spacing: -0.5px;
+      background: linear-gradient(135deg, var(--txt) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .tag {
-      margin-top: 4px;
+      margin-top: 8px;
       color: var(--mut);
-      font-size: 18px;
+      font-size: 20px;
+      font-weight: 400;
     }
 
-    .card {
-      background: var(--panel);
-      border: 1px solid var(--panel-border);
-      border-radius: 24px;
-      padding: 32px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--accent), transparent);
-      opacity: 0.6;
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      margin-top: 16px;
     }
 
     .h2 {
-      margin: 0 0 12px;
-      font-size: 24px;
+      margin: 0 0 20px;
+      font-size: 28px;
       font-weight: 700;
       letter-spacing: -0.2px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 16px 28px;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
-      border: none;
-      border-radius: 16px;
       color: var(--txt);
+    }
+
+    .h3 {
+      margin: 0 0 16px;
+      font-size: 22px;
       font-weight: 600;
-      text-align: center;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);
-      position: relative;
-      overflow: hidden;
-    }
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4);
-    }
-    .btn:active {
-      transform: translateY(0);
+      color: var(--accent);
     }
 
-    .contact-info {
-      margin: 20px 0;
+    .btn-secondary {
+      background: linear-gradient(135deg, var(--accent) 0%, #0891b2 100%);
+      box-shadow: 0 4px 16px rgba(6, 182, 212, 0.3);
     }
 
-    .contact-item {
-      margin: 12px 0;
-      padding: 8px 0;
+    .btn-secondary:hover {
+      box-shadow: 0 8px 24px rgba(6, 182, 212, 0.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      box-shadow: none;
+    }
+    
+    .btn-outline:hover {
+      background: var(--primary);
+      color: var(--txt);
+    }
+
+    /* Services Section */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin: 32px 0;
+    }
+
+    .service-icon {
+      font-size: 32px;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    /* Features Section */
+    .features-list {
+      list-style: none;
+      padding: 0;
+      margin: 24px 0;
+    }
+
+    .features-list li {
+      padding: 12px 0;
       border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
 
-    .contact-item:last-child {
+    .features-list li:last-child {
       border-bottom: none;
     }
 
-    .contact-item strong {
-      color: var(--primary);
-      margin-right: 8px;
+    .feature-check {
+      color: var(--success);
+      font-size: 20px;
     }
-
-    .contact-item a {
-      color: var(--txt);
-      text-decoration: underline;
-    }
-
-    .contact-item a:hover {
-      color: var(--primary);
-    }
-
-
 
     /* Contact Form Styles */
     .contact-options {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      margin: 24px 0;
+      margin: 32px 0;
     }
 
     .contact-option h3 {
@@ -201,13 +515,13 @@
     .contact-form {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 20px;
     }
 
     .form-group {
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 8px;
     }
 
     .form-group label {
@@ -218,13 +532,14 @@
 
     .form-group input,
     .form-group textarea {
-      padding: 12px 16px;
+      padding: 16px 20px;
       border: 1px solid var(--panel-border);
       border-radius: 12px;
       background: rgba(255, 255, 255, 0.05);
       color: var(--txt);
-      font-size: 14px;
+      font-size: 16px;
       transition: all 0.3s ease;
+      font-family: inherit;
     }
 
     .form-group input:focus,
@@ -232,6 +547,7 @@
       outline: none;
       border-color: var(--primary);
       box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+      background: rgba(255, 255, 255, 0.08);
     }
 
     .form-group input::placeholder,
@@ -239,78 +555,357 @@
       color: var(--mut);
     }
 
-    .btn-secondary {
-      background: linear-gradient(135deg, var(--accent) 0%, #0891b2 100%);
-      box-shadow: 0 4px 16px rgba(6, 182, 212, 0.3);
+    .form-group.error input,
+    .form-group.error textarea {
+      border-color: var(--error);
     }
 
-    .btn-secondary:hover {
-      box-shadow: 0 8px 24px rgba(6, 182, 212, 0.4);
+    .error-message {
+      color: var(--error);
+      font-size: 14px;
+      margin-top: 4px;
     }
 
+    .success-message {
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid var(--success);
+      border-radius: 12px;
+      padding: 16px;
+      color: var(--success);
+      margin: 16px 0;
+      display: none;
+    }
 
+    .contact-info {
+      margin: 32px 0;
+      padding: 24px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 16px;
+      border: 1px solid var(--panel-border);
+    }
 
+    .contact-item {
+      margin: 16px 0;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .contact-item:last-child {
+      border-bottom: none;
+    }
+
+    .contact-item strong {
+      color: var(--primary);
+      min-width: 80px;
+    }
+
+    .contact-item a {
+      color: var(--txt);
+      text-decoration: underline;
+    }
+
+    .contact-item a:hover {
+      color: var(--primary);
+    }
+
+    /* Footer */
     footer {
-      opacity: 0.6;
-      margin-top: 40px;
+      opacity: 0.7;
+      margin-top: 60px;
       text-align: center;
       font-size: 14px;
+      padding: 24px;
+      border-top: 1px solid var(--line);
+    }
+
+    /* Loading and Success States */
+    .btn.loading {
+      position: relative;
+      color: transparent;
+    }
+    
+    .btn.loading::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 20px;
+      height: 20px;
+      margin: -10px 0 0 -10px;
+      border: 2px solid transparent;
+      border-top: 2px solid var(--txt);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
 
     /* Responsive adjustments */
-    @media (max-width: 520px) {
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .nav-toggle {
+        display: block;
+      }
       .wrap {
-        padding: 16px;
+        padding: 100px 16px 16px;
       }
       .hero {
-        gap: 16px;
+        gap: 24px;
+      }
+      h1 {
+        font-size: 36px;
+      }
+      .logoBox {
+        width: 280px;
+      }
+      .card {
+        padding: 28px;
+      }
+      .contact-options {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      .about-highlights {
+        grid-template-columns: 1fr;
+      }
+      .hero-cta {
+        flex-direction: column;
+        width: 100%;
+      }
+      .btn {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .wrap {
+        padding: 80px 12px 12px;
       }
       h1 {
         font-size: 32px;
       }
       .logoBox {
-        width: 100%; /* Make logo full width on small screens */
-        height: auto;
+        width: 240px;
       }
       .card {
         padding: 24px;
       }
-      .btn {
-        display: block;
-        width: 100%;
-      }
-      .contact-options {
+      .about-highlights {
         grid-template-columns: 1fr;
-        gap: 24px;
       }
+    }
 
+    /* Smooth scroll behavior */
+    html {
+      scroll-behavior: smooth;
+    }
 
+    /* Focus styles for accessibility */
+    .btn:focus,
+    input:focus,
+    textarea:focus {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+
+    /* Debug: Ensure content is visible */
+    .card, .service-card, .highlight-item {
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    
+    /* Fallback: If animations fail, content should still be visible */
+    .card.animate-in,
+    .service-card.animate-in,
+    .highlight-item.animate-in {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+    
+    /* About Highlights Section */
+    .about-highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      margin: 32px 0;
+    }
+
+    .highlight-icon {
+      font-size: 32px;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+      border: none;
+      border-radius: 50%;
+      color: var(--txt);
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);
+      transition: all 0.3s ease;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    
+    .back-to-top:hover {
+      transform: translateY(-3px) scale(1.1);
+      box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4);
+      background: linear-gradient(135deg, var(--primary-hover) 0%, var(--primary) 100%);
+    }
+    
+    .back-to-top:active {
+      transform: translateY(-1px) scale(1.05);
+    }
+    
+    /* Responsive adjustments for back to top button */
+    @media (max-width: 768px) {
+      .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .back-to-top {
+        bottom: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+      }
     }
   </style>
 </head>
 <body>
+  <nav class="nav">
+    <div class="nav-content">
+      <div class="nav-logo">Mangomelon AI LLC</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" onclick="toggleNav()">☰</button>
+    </div>
+  </nav>
+
   <main class="wrap">
     <header class="hero">
       <div class="logoBox">
-        <img src="logo.jpeg" alt="Mangomelon AI logo">
+        <img src="logo.jpeg" alt="Mangomelon AI logo" loading="lazy">
       </div>
       <div>
-        <h1>Mangomelon AI LLC</h1>
-        <div class="tag">AI-powered solutions for data analysis.</div>
+        <h1>AI-Powered Data Analysis</h1>
+        <div class="tag">Transform your research and analysis with cutting-edge AI solutions</div>
+      </div>
+      <div class="hero-cta">
+        <a href="#contact" class="btn">Get Started</a>
+        <a href="#services" class="btn btn-outline">View Services</a>
       </div>
     </header>
 
-    <section class="card">
-      <div class="h2">What we do</div>
-      <p>Mangomelon AI LLC is a new company focused on developing AI-powered products and services to make data analysis and research more efficient for individuals and teams.</p>
-      <button class="btn" onclick="contactUs()" aria-label="Contact Mangomelon AI via email">Get in Touch</button>
+    <section id="about" class="card">
+      <div class="h2">What We Do</div>
+      <p>Mangomelon AI LLC is a company focused on developing AI-powered products and services to make data analysis and research more efficient for individuals and teams. We're building solutions that leverage artificial intelligence to simplify complex analytical tasks.</p>
+      
+      <div class="about-highlights">
+        <div class="highlight-item">
+          <span class="highlight-icon">🎯</span>
+          <h3>Focused Mission</h3>
+          <p>Making data analysis accessible through AI-powered tools</p>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-icon">🚀</span>
+          <h3>Innovation First</h3>
+          <p>Leveraging cutting-edge AI to solve real problems</p>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-icon">💡</span>
+          <h3>User-Centric</h3>
+          <p>Building tools that researchers and analysts actually want to use</p>
+        </div>
+      </div>
     </section>
 
+    <section id="services" class="card">
+      <div class="h2">Our Services</div>
+      <p>We're developing AI-powered solutions designed to help with data analysis and research workflows.</p>
+      
+      <div class="services-grid">
+        <div class="service-card">
+          <span class="service-icon">🤖</span>
+          <h3>AI-Powered Analysis</h3>
+          <p>Tools that use artificial intelligence to help process and analyze data more efficiently.</p>
+        </div>
+        
+        <div class="service-card">
+          <span class="service-icon">📊</span>
+          <h3>Data Processing</h3>
+          <p>Solutions to help clean, organize, and prepare data for analysis.</p>
+        </div>
+        
+        <div class="service-card">
+          <span class="service-icon">🔬</span>
+          <h3>Research Support</h3>
+          <p>AI assistance for research tasks and data collection workflows.</p>
+        </div>
+        
+        <div class="service-card">
+          <span class="service-icon">📈</span>
+          <h3>Data Insights</h3>
+          <p>AI tools to help identify patterns and insights in your data.</p>
+        </div>
+      </div>
 
+      <div class="features-list">
+        <h3>What We're Building</h3>
+        <ul>
+          <li><span class="feature-check">✓</span> AI-assisted data analysis</li>
+          <li><span class="feature-check">✓</span> Automated data processing</li>
+          <li><span class="feature-check">✓</span> Research workflow tools</li>
+          <li><span class="feature-check">✓</span> Pattern recognition</li>
+          <li><span class="feature-check">✓</span> User-friendly interfaces</li>
+          <li><span class="feature-check">✓</span> Scalable solutions</li>
+        </ul>
+      </div>
+    </section>
 
-    <section class="card">
-      <div class="h2">Contact Us</div>
-      <p>Ready to get started with AI-powered data analysis? We'd love to hear from you!</p>
+    <section id="contact" class="card">
+      <div class="h2">Get In Touch</div>
+      <p>Interested in learning more about our AI-powered data analysis solutions? We'd love to hear from you and discuss how we can help.</p>
       
       <div class="contact-options">
         <div class="contact-option">
@@ -325,43 +920,147 @@
               <input type="email" id="email" name="email" required>
             </div>
             <div class="form-group">
-              <label for="message">Message *</label>
-              <textarea id="message" name="message" rows="4" required></textarea>
+              <label for="company">Company/Organization</label>
+              <input type="text" id="company" name="company">
             </div>
-            <button type="submit" class="btn">Send Message</button>
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Tell us about your data analysis needs..."></textarea>
+            </div>
+            <button type="submit" class="btn" id="submit-btn">Send Message</button>
           </form>
-        </div>
-
-        <div class="contact-option">
-          <h3>📅 Schedule a Call</h3>
-          <p>Book a 30-minute consultation to discuss your AI needs.</p>
-          <a href="https://calendly.com/mangomelonai" target="_blank" class="btn btn-secondary">
-            Book a Call
-          </a>
+          <div class="success-message" id="success-message">
+            Thank you for your message! We've received your inquiry and will get back to you soon. You can also email us directly at mangomelonai@gmail.com.
+          </div>
         </div>
       </div>
 
       <div class="contact-info">
         <div class="contact-item">
-          <strong>Email:</strong> <a href="mailto:mangomelonai@gmail.com">mangomelonai@gmail.com</a>
+          <strong>📧 Email:</strong> <a href="mailto:mangomelonai@gmail.com">mangomelonai@gmail.com</a>
         </div>
         <div class="contact-item">
-          <strong>Location:</strong> United States
+          <strong>🌍 Location:</strong> United States
         </div>
         <div class="contact-item">
-          <strong>Services:</strong> AI-powered data analysis tools, Research automation, Team collaboration solutions
+          <strong>📋 Focus:</strong> AI-powered data analysis tools and research solutions
         </div>
       </div>
     </section>
 
-
-
-    <footer>© <span id="y"></span> Mangomelon AI LLC</footer>
+    <footer>
+      <p>© <span id="y"></span> Mangomelon AI LLC. All rights reserved.</p>
+      <p style="margin-top: 8px; font-size: 12px; opacity: 0.6;">
+        Powered by cutting-edge artificial intelligence for smarter data analysis.
+      </p>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+      ↑
+    </button>
   </main>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
   <script>
+    // Update copyright year
+    document.getElementById('y').textContent = new Date().getFullYear();
+    
+    // Mobile navigation toggle
+    function toggleNav() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+    }
+    
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+    
+    // Form validation and submission
+    function submitForm(event) {
+      event.preventDefault();
+      
+      const form = event.target;
+      const submitBtn = document.getElementById('submit-btn');
+      const successMessage = document.getElementById('success-message');
+      
+      // Clear previous errors
+      form.querySelectorAll('.form-group').forEach(group => {
+        group.classList.remove('error');
+        const errorMsg = group.querySelector('.error-message');
+        if (errorMsg) errorMsg.remove();
+      });
+      
+      // Basic validation
+      let isValid = true;
+      const requiredFields = form.querySelectorAll('[required]');
+      
+      requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+          isValid = false;
+          const formGroup = field.closest('.form-group');
+          formGroup.classList.add('error');
+          
+          const errorMsg = document.createElement('div');
+          errorMsg.className = 'error-message';
+          errorMsg.textContent = 'This field is required';
+          formGroup.appendChild(errorMsg);
+        }
+      });
+      
+      if (!isValid) return;
+      
+      // Show loading state
+      submitBtn.classList.add('loading');
+      submitBtn.disabled = true;
+      
+      // Simulate form processing
+      setTimeout(() => {
+        const formData = new FormData(form);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const company = formData.get('company');
+        const message = formData.get('message');
+        
+        // Show success message
+        successMessage.style.display = 'block';
+        form.reset();
+        
+        // Reset button state
+        submitBtn.classList.remove('loading');
+        submitBtn.disabled = false;
+        
+        // Hide success message after 8 seconds
+        setTimeout(() => {
+          successMessage.style.display = 'none';
+        }, 8000);
+        
+        // Also provide email option as fallback
+        const emailBody = `Name: ${name}\nEmail: ${email}${company ? `\nCompany: ${company}` : ''}\n\nMessage:\n${message}`;
+        const mailtoLink = `mailto:mangomelonai@gmail.com?subject=Contact from ${name} - Mangomelon AI&body=${encodeURIComponent(emailBody)}`;
+        
+        // Ask if they want to open email client
+        setTimeout(() => {
+          if (confirm('Would you like to also send this message via email? This will open your email client.')) {
+            const link = document.createElement('a');
+            link.href = mailtoLink;
+            link.click();
+          }
+        }, 2000);
+      }, 1500);
+    }
+    
+    // Contact function for general inquiries
     function contactUs() {
-      // Try to open email client
       const email = 'mangomelonai@gmail.com';
       const subject = 'Inquiry about Mangomelon AI services';
       const body = 'Hello,\n\nI would like to learn more about your AI-powered products and services.\n\nBest regards,';
@@ -384,32 +1083,158 @@
         }
       }, 1000);
     }
-
-    function submitForm(event) {
-      event.preventDefault();
+    
+    // Enhanced scroll-based navbar background
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('.nav');
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+    
+    // Enhanced Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+          
+          // Add staggered animation for service cards
+          if (entry.target.classList.contains('services-grid')) {
+            const serviceCards = entry.target.querySelectorAll('.service-card');
+            serviceCards.forEach((card, index) => {
+              setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+              }, index * 100);
+            });
+          }
+          
+          // Add staggered animation for highlight items
+          if (entry.target.classList.contains('about-highlights')) {
+            const highlightItems = entry.target.querySelectorAll('.highlight-item');
+            highlightItems.forEach((item, index) => {
+              setTimeout(() => {
+                item.style.opacity = '1';
+                item.style.transform = 'translateY(0)';
+              }, index * 150);
+            });
+          }
+        }
+      });
+    }, observerOptions);
+    
+    // Observe all cards and sections for animation
+    document.querySelectorAll('.card, .services-grid, .about-highlights').forEach((element, index) => {
+      // Don't set opacity to 0 initially - keep content visible
+      element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
       
-      const formData = new FormData(event.target);
-      const name = formData.get('name');
-      const email = formData.get('email');
-      const message = formData.get('message');
+      // Add initial loading state
+      element.classList.add('loading');
       
-      // Create mailto link with form data
-      const subject = `Contact from ${name} - Mangomelon AI`;
-      const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+      // Remove loading state after animation
+      setTimeout(() => {
+        element.classList.remove('loading');
+      }, 1000 + (index * 200));
       
-      const mailtoLink = `mailto:mangomelonai@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      observer.observe(element);
+    });
+    
+    // Add smooth reveal animation for hero elements
+    const heroElements = document.querySelectorAll('.hero > *');
+    heroElements.forEach((element, index) => {
+      // Don't set opacity to 0 initially - keep content visible
+      element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
       
-      // Open email client
-      const link = document.createElement('a');
-      link.href = mailtoLink;
-      link.click();
+      // Optional: add subtle entrance animation
+      setTimeout(() => {
+        element.style.transform = 'translateY(0)';
+      }, 300 + (index * 200));
+    });
+    
+    // Enhanced button click effects
+    document.querySelectorAll('.btn').forEach(button => {
+      button.addEventListener('click', function(e) {
+        // Create ripple effect
+        const ripple = document.createElement('span');
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = e.clientX - rect.left - size / 2;
+        const y = e.clientY - rect.top - size / 2;
+        
+        ripple.style.width = ripple.style.height = size + 'px';
+        ripple.style.left = x + 'px';
+        ripple.style.top = y + 'px';
+        ripple.classList.add('ripple');
+        
+        this.appendChild(ripple);
+        
+        setTimeout(() => {
+          ripple.remove();
+        }, 600);
+      });
+    });
+    
+    // Add CSS for ripple effect
+    const style = document.createElement('style');
+    style.textContent = `
+      .btn {
+        position: relative;
+        overflow: hidden;
+      }
       
-      // Show success message
-      alert('Thank you for your message! Your email client should open with a pre-filled message. If it doesn\'t work, please email us directly at mangomelonai@gmail.com');
+      .ripple {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        transform: scale(0);
+        animation: ripple-animation 0.6s linear;
+        pointer-events: none;
+      }
       
-      // Reset form
-      event.target.reset();
-    }
+      @keyframes ripple-animation {
+        to {
+          transform: scale(4);
+          opacity: 0;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+    
+    // Back to Top Button Functionality
+    const backToTopButton = document.getElementById('back-to-top');
+    
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopButton.classList.add('visible');
+      } else {
+        backToTopButton.classList.remove('visible');
+      }
+    });
+    
+    // Smooth scroll to top when button is clicked
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Add hover effect for back to top button
+    backToTopButton.addEventListener('mouseenter', () => {
+      backToTopButton.style.transform = 'translateY(-3px) scale(1.1)';
+    });
+    
+    backToTopButton.addEventListener('mouseleave', () => {
+      backToTopButton.style.transform = 'translateY(0)';
+    });
   </script>
 </body>
 </html>
